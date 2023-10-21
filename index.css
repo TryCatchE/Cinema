@@ -1,0 +1,608 @@
+/* styles για ολόκληρο το site */
+
+/* #region fontface */
+/* @font-face {
+  font-family: 'Roboto';
+  src: url('//localhost/cinemaProject/fonts/dehinted-subset-Roboto-Regular.woff2') format('woff2'),
+      url('//localhost/cinemaProject/fonts/dehinted-subset-Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('//localhost/cinemaProject/fonts/dehinted-subset-Roboto-Bold.woff2') format('woff2'),
+      url('//localhost/cinemaProject/fonts/dehinted-subset-Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+} */
+
+/* #endregion */
+
+/* #region body */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: var(--mainColor);
+  color: var(--white);
+}
+
+:root {
+  --spacing: 2rem;
+  --headerHeight: 90px;
+  --mainColor: #071e3f;
+  --white: #f5f5f5;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  color: var(--mainColor);
+  background-color: var(--white);
+  font-family: "Roboto", sans-serif;
+  /* height:100%; */
+}
+
+.overflowHidden {
+  overflow: hidden;
+}
+
+main {
+  /* height:100%;
+  margin-bottom:auto; */
+  min-height:100vh !important;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* #endregion */
+
+/* #region common */
+.container {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+@media (min-width: 768px) {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+  }
+}
+
+.blue {
+  color: var(--mainColor);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.5s;
+}
+@media (min-width: 768px) {
+  .blue:hover {
+    transition: text-decoration-color 0.5s;
+    text-decoration-color: var(--mainColor);
+  }
+}
+a {
+  /* display: block; */
+  text-decoration: none;
+  color: var(--mainColor);
+  cursor: pointer;
+}
+
+.underlineHover {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.5s;
+}
+@media (min-width: 768px) {
+  .underlineHover:hover {
+    transition: text-decoration-color 0.5s;
+    text-decoration-color: var(--white);
+  }
+}
+
+.svgCnt {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+.mediumSvgCnt {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.smallSvgCnt {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--mainColor);
+  transition: opacity 0.5s;
+}
+
+@media (min-width: 768px) {
+  a > svg:hover {
+    opacity: 0.6;
+  }
+}
+
+.genericTitle {
+  text-align: center;
+  margin-bottom: var(--spacing);
+}
+
+.picture {
+  position: relative;
+  padding-bottom: 100%;
+}
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.blueBtn {
+  display: inline-block;
+  padding: 0.7rem 0.7rem;
+  border: none;
+  background: var(--mainColor);
+  color: var(--white);
+  border-radius: 0.25rem;
+  min-width: 80px;
+  text-align: center;
+  transition: color 0.5s;
+  border: 1px solid var(--mainColor);
+  transition: background-color 0.5s ease-out;
+}
+
+@media (min-width: 768px) {
+  .blueBtn:hover {
+    background-color: var(--white);
+    transition: background-color 0.5s ease-out;
+    color: var(--mainColor);
+    cursor: pointer;
+  }
+}
+
+.whiteBtn {
+  display: inline-block;
+  padding: 0.7rem 0.7rem;
+  border: 1px solid black;
+  color: var(--mainColor);
+  border-radius: 0.25rem;
+  min-width: 80px;
+  text-align: center;
+  transition: color 0.5s;
+  transition: background-color 0.5s ease-out;
+}
+
+@media (min-width: 768px) {
+  .whiteBtn:hover {
+    background-color: var(--mainColor);
+    transition: color 0.5s;
+    transition: background-color 0.5s ease-out;
+    color: var(--white);
+  }
+}
+
+/* #endregion */
+
+/* region workingHoursBar */
+
+.workingHoursCnt{
+    position: fixed;
+    top: 0;
+}
+
+#scroll-container {
+ 
+  border-radius: 5px;
+  overflow: hidden;
+  color:var(--white);
+  background-color: var(--mainColor);
+}
+
+.red{
+  background-color:red;
+  border-radius:2px;
+  padding: 0 .5rem;
+}
+
+.nobreak{
+  white-space:nowrap;
+}
+
+#scroll-text {
+  text-align: right;
+  display:flex;
+  gap:1rem;
+
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  
+  -moz-animation: my-animation 30s linear infinite;
+  -webkit-animation: my-animation 30s linear infinite;
+  animation: my-animation 30s linear infinite;
+
+}
+
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(-100%); }
+  to { -moz-transform: translateX(100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(-100%); }
+  to { -webkit-transform: translateX(100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  to {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+/* #endregion */
+
+
+/* #region commonFormStyles */
+.formCnt {
+  margin-bottom: var(--spacing);
+  max-width: 500px;
+}
+
+.bookingFormCnt{
+    margin-bottom:var(--spacing);
+    border-bottom: 1px solid var(--mainColor);
+}
+
+.genericInput{
+  display:block;
+  width: 100%;
+  padding: .3rem .7rem;
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  height:2.5rem;
+}
+.formTitle{
+  text-align: center;
+  margin-bottom: .5rem;
+  font-weight: bold;
+  font-size: 2rem;
+
+}
+.formSubTitle{
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+}
+
+.formRow{
+  margin-bottom: 1rem;
+}
+
+.genericLabel{
+  display: block;
+  margin-bottom: .2rem;
+  font-weight: bold;
+}
+.formBtn{
+
+  margin-bottom: .5rem;
+}
+
+#hiddenLayout{
+    /* display:none; */
+    width:100%;
+}
+
+#hiddenLayout.open{
+    display:block;
+}
+
+.formInputHidden{
+    display:none;
+}
+
+.formDisplaySeats{
+
+}
+#displayDynamicForms {
+
+  max-width:600px;
+  margin:0 auto;
+}
+
+#displayDynamicForms .bookingFormCnt .formRow:last-child{
+    text-align:center;
+
+}
+
+.screenCnt{
+    max-width:400px;  
+    margin:0 auto;
+    margin-bottom:var(--spacing);
+}
+
+.screen{
+    background-color:var(--mainColor);
+    height:20px;
+    width:100%;
+    text-align:center;
+    color:var(--white);
+    margin-bottom:1rem;
+}
+/* #endregion */
+
+
+/* #region Header */
+.header {
+  height: var(--headerHeight);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: var(--spacing);
+  border-bottom: 1px solid black;
+}
+
+.header .nav {
+  display: contents;
+}
+
+.header .nav .navCnt {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header .nav .navCnt {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+  }
+}
+.header .nav .navCnt .mobileMenuBtn {
+  display: block;
+}
+@media (min-width: 768px) {
+  .header .nav .navCnt .mobileMenuBtn {
+    display: none;
+  }
+}
+
+.header .nav .logo {
+  margin-left: 1rem;
+}
+.header .nav .booking {
+  margin-right: 1rem;
+}
+/* #endregion */
+
+/* #region mobileHeader */
+
+.header .nav .mobileMenuBtn {
+  display: block;
+}
+@media (min-width: 768px) {
+  .header .nav .mobileMenuBtn {
+    display: none;
+  }
+}
+
+.mobileHeader.hidden {
+  display: none;
+}
+
+.mobileHeader {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--white);
+  overflow: auto;
+  padding: 1rem;
+  height: calc(100vh - var(--headerHeight));
+  margin-top: var(--headerHeight);
+}
+
+.mobileHeader .mobileNavCnt {
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+}
+.mobileHeader .mobileNavCnt .mobileNavItem {
+  padding: 1rem;
+}
+/* #endregion*/
+
+/* #region mainCnt */
+
+.moviesCnt {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  margin-bottom: var(--spacing);
+}
+
+@media (min-width: 768px) {
+  .moviesCnt {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    margin-bottom: var(--spacing);
+  }
+}
+
+.noShowsMsg{
+  text-align:center;
+  margin: 0 auto;
+  font-size:3rem;
+  grid-column:span 3;
+}
+
+.moviesCnt .movieCard {
+}
+
+.moviesCnt .movieCard .imgCnt {
+  margin-bottom: 0.5rem;
+}
+
+.moviesCnt .movieCard .movieTitle {
+  margin-bottom: 0.5rem;
+}
+.moviesCnt .movieCard .datesCnt {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.moviesCnt .movieCard .bookingTrailerBtn {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+.dMovie{
+  text-align:center;
+  margin-bottom:var(--spacing);
+}
+
+/* #endregion */
+
+/* #region Footer */
+
+.footer {
+  background-color: var(--mainColor);
+}
+.footer svg {
+  fill: var(--white);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 2rem;
+  }
+}
+
+.footer .logoFooter {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: var(--spacing);
+}
+
+.footer .nav {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer .contentCnt {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.footer .contentCnt {
+  flex-direction: row;
+  color: var(--white);
+  /* background-color: var(--white); */
+}
+.footer .contentCnt a {
+  color: var(--white);
+}
+.footerSubTitle {
+  margin-bottom: 0.5rem;
+}
+
+.footer .newsLetterCnt,
+.contactCnt,
+.socialCnt {
+  margin-bottom: 2rem;
+}
+
+.footer .nav .contentCnt .newsLetterCnt .newsLetterForm{
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .footer .newsLetterCnt,
+  .contactCnt,
+  .socialCnt {
+    flex-basis: 33.333%;
+    margin-bottom: 0;
+  }
+}
+
+.footer .contentCnt .contactCnt .infoCnt {
+  display: flex;
+}
+
+.footer .contentCnt .socialCnt .social {
+  margin: 0 auto;
+}
+
+.footer .contentCnt .socialCnt .svgCnt {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.infoCnt {
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* #endregion */
